@@ -21,7 +21,7 @@ class Migration(SchemaMigration):
         db.create_table('jobs_location', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('city', self.gf('django.db.models.fields.CharField')(max_length=64)),
-            ('state', self.gf('django.contrib.localflavor.us.models.USStateField')(max_length=2)),
+            ('state', self.gf('localflavor.us.models.USStateField')(max_length=2)),
         ))
         db.send_create_signal('jobs', ['Location'])
 
@@ -73,7 +73,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Location'},
             'city': ('django.db.models.fields.CharField', [], {'max_length': '64'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'state': ('django.contrib.localflavor.us.models.USStateField', [], {'max_length': '2'})
+            'state': ('localflavor.us.models.USStateField', [], {'max_length': '2'})
         }
     }
 
